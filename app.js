@@ -27,10 +27,10 @@ app.get('/', (req, res) => {
     return res.end();
   }
     
-  res.send("Please enter another Querry!");
+  res.send("Hello World :)!");
 })
 
-app.get('/:code', (req, res) => {
+app.get('/l/:code', (req, res) => {
   let query = req.params.code;
   if (urls[query]!= undefined){
     //res.send(querrys[query]);
