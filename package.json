@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/markusalterauge/linkurz#readme",
   "dependencies": {
-    "expressjs": "^1.0.1"
+    "express": "^4.18.1"
   }
 }
