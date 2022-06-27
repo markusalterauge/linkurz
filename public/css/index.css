@@ -1,0 +1,87 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/1.38 Helvetica;
+  color: rgb(0, 0, 0);
+}
+
+.container {
+  float: left;
+  width: 26.1992187499%;
+  height: 299px;
+  margin: 108px 0 0 16%;
+}
+
+.element {
+  position: relative;
+  float: left;
+  z-index: 0;
+  width: 76.1904761904%;
+  height: 90px;
+  border-radius: 5px;
+  background-color: rgb(56, 163, 179);
+}
+
+.text {
+  float: left;
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+._button {
+  display: block;
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 4;
+  width: 76.1904761904%;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 3px;
+  background-color: rgb(222, 222, 222);
+  font-size: 1em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+._button:hover {
+  background-color: rgb(56, 163, 179);
+  color: rgb(0, 0, 0);
+}
+
+._button:active {
+  background-color: rgb(56, 133, 179);
+}
+
+._input {
+  display: block;
+  float: left;
+  width: 76.1904761904%;
+  height: 50px;
+  padding: 0 10px;
+  background-color: rgb(242, 242, 242);
+  font-size: 0.813em;
+  color: rgb(0, 0, 0);
+}
+
+.text-1 {
+  position: relative;
+  clear: both;
+  z-index: 1;
+  margin: -53px 0 0 28.95337%;
+}
+
+.text-2 {
+  height: 50px;
+  min-height: 50px;
+  margin: 20px 0 0 4.56845%;
+  text-align: center;
+}
+
+.container ._input-1 {
+  margin-top: 19px;
+}
+
+.container ._input-2 {
+  clear: both;
+  margin-top: 20px;
+}

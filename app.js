@@ -3,7 +3,15 @@ const app = express()
 const port = 3000;
 const bodyparser = require('body-parser');
 const jsonParser = bodyparser.json();
+const cors = require('cors');
 
+
+app.use(express.static(__dirname + '/public'));
+app.use(
+  cors({
+      origin: "*",
+  })
+  )
 
 const getRanHex = size => {
   let result = [];
@@ -26,8 +34,8 @@ app.get('/', (req, res) => {
     res.writeHead(301, { "Location": urls[query] });
     return res.end();
   }
-    
-  res.send("Hello World :)!");
+  res.writeHead(200, {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Credentials":true})
+  res.sendFile(__dirname + '/public/index.html');
 })
 
 app.get('/l/:code', (req, res) => {
@@ -47,6 +55,7 @@ app.get ('/url', (req, res)=> {
 
 app.post('/url', jsonParser, (req, res) => {
   let url = req.body.url;
+  console.log(url);
   let random;
   let i = true;
   while (i == true){
