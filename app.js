@@ -58,6 +58,13 @@ app.post('/url', jsonParser, (req, res) => {
   let url = req.body.url;
   let random;
   let i = true;
+  if (req.body.name != "Name"){
+    if(urls[req.body.name] == undefined){
+      urls[req.body.name] = url;
+      res.status(200).send(req.body.name);
+    }
+    req.status(400).send("Name schon vergeben!");
+  }
   while (i == true){
     random = getRanHex(6);
     if (urls[random] == undefined) {
