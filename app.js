@@ -9,7 +9,7 @@ const cors = require('cors');
 app.use(express.static(__dirname + '/public'));
 app.use(
   cors({
-      origin: "https://linkurz/url",
+      origin: "*",
   })
   )
 
@@ -54,8 +54,8 @@ app.get ('/url', (req, res)=> {
 })
 
 app.post('/url', jsonParser, (req, res) => {
+  console.log(req.body);
   let url = req.body.url;
-  console.log(url);
   let random;
   let i = true;
   while (i == true){
@@ -65,7 +65,7 @@ app.post('/url', jsonParser, (req, res) => {
       i = false;
     }
   }
-  res.send(random);
+  res.status(200).send(random);
 })
 
 app.listen(port, () => {
