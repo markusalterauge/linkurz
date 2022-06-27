@@ -61,9 +61,9 @@ app.post('/url', jsonParser, (req, res) => {
   if (req.body.name != ""){
     if(urls[req.body.name] == undefined){
       urls[req.body.name] = url;
-      res.status(200).send(req.body.name);
+      res.status(200).send(req.body.name).end;
     }
-    req.status(400).send("Name schon vergeben!");
+    req.status(400).send("Name schon vergeben!").end;
   }
   while (i == true){
     random = getRanHex(6);
@@ -72,7 +72,7 @@ app.post('/url', jsonParser, (req, res) => {
       i = false;
     }
   }
-  res.status(200).send(random);
+  res.status(200).send(random).end;
 })
 
 app.listen(port, () => {
