@@ -1,0 +1,22 @@
+{
+  "name": "linkurz",
+  "version": "0.1.0",
+  "description": "for linkurz website, a short url service",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markusalterauge/linkurz.git"
+  },
+  "author": "Markus Alterauge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markusalterauge/linkurz/issues"
+  },
+  "homepage": "https://github.com/markusalterauge/linkurz#readme",
+  "dependencies": {
+    "expressjs": "^1.0.1"
+  }
+}
