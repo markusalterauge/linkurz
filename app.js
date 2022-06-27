@@ -58,7 +58,7 @@ app.post('/url', jsonParser, (req, res) => {
   let url = req.body.url;
   let random;
   let i = true;
-  if (req.body.name != "Name"){
+  if (req.body.name != ""){
     if(urls[req.body.name] == undefined){
       urls[req.body.name] = url;
       res.status(200).send(req.body.name);
