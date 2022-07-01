@@ -58,7 +58,7 @@ router.post('/url', jsonParser, (req, res) => {
             res.send(err).end;
             return;
         }
-        res.send(result).end;
+        res.send(`https://linkurz.de/l/${name}`).end;
 
     });
 });

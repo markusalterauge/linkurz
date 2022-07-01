@@ -30,7 +30,7 @@
           if (xhr.readyState === 4) {
             console.log(xhr.status);
             console.log(xhr.responseText);
-            document.getElementById("result").innerText ="https://linkurz.de/l/" + xhr.responseText;
+            document.getElementById("result").innerText =xhr.responseText;
           }};
 
         let data = {
