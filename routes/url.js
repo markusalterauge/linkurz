@@ -4,7 +4,7 @@ const functions = require('../fuctions');
 const bodyparser = require('body-parser');
 const jsonParser = bodyparser.json();
 const db = require('../mysql-db');
-const sanitizer = require('sanitize');
+const {body} = require("express-validator");
 
 var urls = {
 
@@ -43,9 +43,13 @@ router.get ('/url', (req, res)=> {
     });
 });
   
-router.post('/url', jsonParser, (req, res) => {
-    let url = sanitizer.value(req.body.url, 'string');
-    let name = sanitizer.value(req.body.name, 'string');
+router.post('/url', jsonParser, [
+    body('name').trim().escape(),
+    body('url').trim().escape()
+    ],
+   (req, res) => {
+    let url = req.body.url;
+    let name = req.body.name;
     if (url == undefined || name == undefined){
         res.status(400).send("url or name mustn't be undefined!");
         return;
