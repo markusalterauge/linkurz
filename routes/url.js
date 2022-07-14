@@ -4,6 +4,7 @@ const functions = require('../fuctions');
 const bodyparser = require('body-parser');
 const jsonParser = bodyparser.json();
 const db = require('../mysql-db');
+const sanitizer = require('sanitize');
 
 var urls = {
 
@@ -43,8 +44,8 @@ router.get ('/url', (req, res)=> {
 });
   
 router.post('/url', jsonParser, (req, res) => {
-    let url = req.body.url;
-    let name = req.body.name;
+    let url = sanitizer.value(req.body.url, 'string');
+    let name = sanitizer.value(req.body.name, 'string');
     if (url == undefined || name == undefined){
         res.status(400).send("url or name mustn't be undefined!");
         return;
