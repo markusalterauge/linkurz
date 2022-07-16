@@ -14,8 +14,6 @@ connection.connect((error) => {
     }
     console.log('Connection established sucessfully');
 });
-//connection.end((error)=> {
-//});
 
 var getAllUrls = function(callback) {
     connection.query(`SELECT * FROM urls`, (err, result) =>{

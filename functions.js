@@ -6,6 +6,6 @@ const getRanHex = size => {
       result.push(hexRef[Math.floor(Math.random() * 16)]);
     }
     return result.join('');
-  }
+  };
 
- module.exports = getRanHex();
+ module.exports = {getRanHex};
