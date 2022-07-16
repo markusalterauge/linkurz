@@ -44,8 +44,13 @@ router.get ('/url', (req, res)=> {
 });
   
 router.post('/url', jsonParser, [
-    body('name').trim().escape(),
-    body('url').trim().escape()
+    body('name')
+    .trim()
+    .blacklist('\\(\\)\\[\\]\\<\\>\\"')
+    ,
+    body('url')
+    .trim()
+    .blacklist('\\(\\)\\[\\]\\<\\>\\"')
     ],
    (req, res) => {
     let url = req.body.url;
