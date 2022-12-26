@@ -42,11 +42,11 @@ router.get ('/url', (req, res)=> {
   
 router.post('/url', jsonParser, [
     body('name')
-    .trim()
+    //.trim()
     .blacklist('\\(\\)\\[\\]\\<\\>\\"')
     ,
     body('url')
-    .trim()
+    //.trim()
     .blacklist('\\(\\)\\[\\]\\<\\>\\"'),
     body('random')
     .blacklist('\\(\\)\\[\\]\\<\\>\\"')
